@@ -1,2 +1,8 @@
-make : hello.c
-	gcc -Wall -Werror -o Hello1 hello.c
+all: geometry
+
+geometry : geometry.c
+	gcc -Wall -Werror -o geometry geometry.c
+run: 
+	./geometry result
+clean:
+	rm geometry
