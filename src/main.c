@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "geometry.h"
-#include "syntax.h"
-#include "shape_info.h"
+#include <libgeometry/syntax.h>
+#include <libgeometry/shape_info.h>
 
 #define SHAPE_NAME_SIZE 50
 #define SHAPE_INFO_SIZE 20

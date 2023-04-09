@@ -1,3 +1,4 @@
+#pragma once
 #define SHAPE_NAME_SIZE 50
 #define SHAPE_INFO_SIZE 20
 
