@@ -1,3 +1,7 @@
-Hello
-Hello1
 geometry
+main.o
+shape_info.o
+syntax.o
+main.d
+shape_info.d
+syntax.d

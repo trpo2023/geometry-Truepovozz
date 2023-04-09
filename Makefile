@@ -1,8 +1,28 @@
-all: geometry
+NAME = geometry
+CFLAGS = -Wall -Werror
+DIR_SRC = ./src/libgeometry/
+DIR_OBJ = ./obj/
 
-geometry : geometry.c
-	gcc -Wall -Werror -o geometry geometry.c
+OBJ = $(DIR_OBJ)main.o $(DIR_OBJ)shape_info.o $(DIR_OBJ)syntax.o
+
+all : $(NAME).o
+$(NAME).o : $(OBJ)
+	gcc $(CFLAGS) -o $(NAME) $^
+
+$(DIR_OBJ)main.o : $(DIR_SRC)main.c
+	gcc $(CFLAGS) -MMD -c $< -o $@
+
+$(DIR_OBJ)shape_info.o : $(DIR_SRC)shape_info.c
+	gcc $(CFLAGS) -MMD -c $< -o $@
+
+$(DIR_OBJ)syntax.o : $(DIR_SRC)syntax.c
+	gcc $(CFLAGS) -MMD -c $< -o $@	
+
+-include main.d shape_info.d syntax.d
 run: 
-	./geometry result
+	./$(NAME) shapes
+
 clean:
-	rm geometry
+	rm $(NAME)
+	rm $(DIR_OBJ)*.o
+	rm $(DIR_OBJ)*.d
