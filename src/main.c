@@ -16,8 +16,8 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    char* shape_str = NULL;
     size_t size_of_shape_str = 0;
+    char* shape_str = NULL;
     circle* shapes[QUONTITY_OF_SHAPES];
     for (int i = 0; i < QUONTITY_OF_SHAPES; i++) {
         shapes[i] = malloc(sizeof(circle));
