@@ -5,30 +5,38 @@
 #include <libgeometry/syntax.h>
 #include <libgeometry/shape_info.h>
 
-#define SHAPE_NAME_SIZE 50
 #define SHAPE_INFO_SIZE 20
+#define QUONTITY_OF_SHAPES 2
 
 int main(int argc, char* argv[])
 {
-    int bool = 0;
     FILE* file = fopen(argv[1], "r");
     if (file == NULL) {
         printf("Didn`t open\n");
         return -1;
     }
-    char shape[SHAPE_NAME_SIZE];
-    char info[SHAPE_INFO_SIZE];
-    circle a;
-    fgets(shape, SHAPE_NAME_SIZE, file);
-    bool = syntax_check(shape);
 
-    if (bool == 1) {
-        get_shape_info(shape, info);
-        sscanf(info, "%f%f%f", &a.center_x, &a.center_y, &a.radius);
-    } else {
-        printf("Please correct your file and try again:3");
-        return 0;
+    char* shape_str = NULL;
+    size_t size_of_shape_str = 0;
+    char info[SHAPE_INFO_SIZE];
+    circle* shapes[QUONTITY_OF_SHAPES];
+    for(int i = 0; i < QUONTITY_OF_SHAPES; i++)
+    {
+        shapes[i] = malloc(sizeof(circle));
+        getline(&shape_str, &size_of_shape_str, file);
+
+        if (syntax_check(shape_str, size_of_shape_str)) {
+            get_shape_info(shape_str,size_of_shape_str, info);
+            sscanf(info, "%f%f%f", &shapes[i]->center_x, &shapes[i]->center_y, &shapes[i]->radius);
+        } else {
+            printf("Please correct your file and try again:3\n");
+            return 0;
+        }
+        free(shape_str);
     }
 
-    printf("circle(%f %f, %f)", a.center_x, a.center_y, a.radius);
+    for(int i = 0; i < QUONTITY_OF_SHAPES; i++)
+    {
+        printf("circle(%f %f, %f)\n", shapes[i]->center_x, shapes[i]->center_y, shapes[i]->radius);
+    }
 }

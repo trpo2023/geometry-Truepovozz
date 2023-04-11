@@ -1,11 +1,11 @@
 #include "syntax.h"
-int syntax_check(char* shape)
+int syntax_check(char* shape, const size_t size_of_str)
 {
     char real_shape_name[LEN_OF_CIRCLE] = {'c', 'i', 'r', 'c', 'l', 'e'};
-    char shape_name[SHAPE_NAME_SIZE];
-    char misstake_pointer[SHAPE_NAME_SIZE];
+    char shape_name[size_of_str];
+    char misstake_pointer[size_of_str];
     int counter = 0;
-    for (int i = 0; i < SHAPE_NAME_SIZE; i++) {
+    for (int i = 0; i < size_of_str; i++) {
         misstake_pointer[i] = ' ';
         misstake_pointer[i + 1] = '\0';
     }
@@ -92,7 +92,7 @@ int syntax_check(char* shape)
         printf("Problem in second brecket!\n");
         return 0;
     }
-    if (shape[counter + 1] != '\0') {
+    if ((shape[counter + 1] != '\0') && (shape[counter + 1] != '\n')) {
         printf("%s\n", shape);
         misstake_pointer[counter + 1] = '^';
         printf("%s\n", misstake_pointer);

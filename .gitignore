@@ -1,4 +1,4 @@
-geometry
+geometry.o
 main.o
 shape_info.o
 syntax.o

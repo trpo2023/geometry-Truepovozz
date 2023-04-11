@@ -8,7 +8,7 @@ OBJ = $(DIR_OBJ)main.o $(DIR_OBJ)shape_info.o $(DIR_OBJ)syntax.o
 
 all : $(NAME).o
 $(NAME).o : $(DIR_OBJ)main.o $(DIR_OBJ)libgeometry.a
-	gcc $(CFLAGS) -o $(NAME) $^
+	gcc $(CFLAGS) -o $(NAME).o $^
 
 $(DIR_OBJ)main.o : $(DIR_SRC)main.c
 	gcc $(CFLAGS) -I ./src -MMD -c $< -o $@
@@ -27,6 +27,6 @@ run:
 	./$(NAME) shapes
 
 clean:
-	rm $(NAME)
+	rm $(NAME).o
 	rm $(DIR_OBJ)*.o
 	rm $(DIR_OBJ)*.d
