@@ -37,5 +37,6 @@ int main(int argc, char* argv[])
     {
         printf("circle(%f %f, %f)\n", shapes[i]->center_x, shapes[i]->center_y, shapes[i]->radius);
         printf("perimeter = %f\n", get_perimeter(shapes[i]));
+        printf("area = %f\n", get_area(shapes[i]));
     }
 }
