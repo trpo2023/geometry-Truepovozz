@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "geometry.h"
+#include <libgeometry/geometry.h>
 #include <libgeometry/syntax.h>
 #include <libgeometry/shape_info.h>
 
@@ -18,7 +18,6 @@ int main(int argc, char* argv[])
 
     char* shape_str = NULL;
     size_t size_of_shape_str = 0;
-    char info[SHAPE_INFO_SIZE];
     circle* shapes[QUONTITY_OF_SHAPES];
     for(int i = 0; i < QUONTITY_OF_SHAPES; i++)
     {
@@ -26,8 +25,7 @@ int main(int argc, char* argv[])
         getline(&shape_str, &size_of_shape_str, file);
 
         if (syntax_check(shape_str, size_of_shape_str)) {
-            get_shape_info(shape_str,size_of_shape_str, info);
-            sscanf(info, "%f%f%f", &shapes[i]->center_x, &shapes[i]->center_y, &shapes[i]->radius);
+            sscanf(shape_str, "circle(%f %f, %f)", &shapes[i]->center_x, &shapes[i]->center_y, &shapes[i]->radius);
         } else {
             printf("Please correct your file and try again:3\n");
             return 0;
@@ -38,5 +36,6 @@ int main(int argc, char* argv[])
     for(int i = 0; i < QUONTITY_OF_SHAPES; i++)
     {
         printf("circle(%f %f, %f)\n", shapes[i]->center_x, shapes[i]->center_y, shapes[i]->radius);
+        printf("perimeter = %f\n", get_perimeter(shapes[i]));
     }
 }
