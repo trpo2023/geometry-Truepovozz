@@ -1,12 +1,12 @@
 #include <ctype.h>
-#include <libgeometry/geometry.h>
-#include <libgeometry/shape_info.h>
-#include <libgeometry/syntax.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SHAPE_INFO_SIZE 20
-#define QUONTITY_OF_SHAPES 2
+#include <libgeometry/geometry.h>
+#include <libgeometry/shape_info.h>
+#include <libgeometry/syntax.h>
+
+#define QUANTITY_OF_SHAPES 2
 
 int main(int argc, char* argv[])
 {
@@ -18,8 +18,8 @@ int main(int argc, char* argv[])
 
     size_t size_of_shape_str = 0;
     char* shape_str = NULL;
-    circle* shapes[QUONTITY_OF_SHAPES];
-    for (int i = 0; i < QUONTITY_OF_SHAPES; i++) {
+    circle* shapes[QUANTITY_OF_SHAPES];
+    for (int i = 0; i < QUANTITY_OF_SHAPES; i++) {
         shapes[i] = malloc(sizeof(circle));
         getline(&shape_str, &size_of_shape_str, file);
 
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
         free(shape_str);
     }
 
-    for (int i = 0; i < QUONTITY_OF_SHAPES; i++) {
+    for (int i = 0; i < QUANTITY_OF_SHAPES; i++) {
         printf("circle(%f %f, %f)\n",
                shapes[i]->center_x,
                shapes[i]->center_y,
