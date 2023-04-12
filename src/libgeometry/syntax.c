@@ -1,4 +1,7 @@
-#include "syntax.h"
+#include <stdio.h>
+
+#include <libgeometry/syntax.h>
+
 int syntax_check(char* shape, const size_t size_of_str)
 {
     char real_shape_name[LEN_OF_CIRCLE] = {'c', 'i', 'r', 'c', 'l', 'e'};
