@@ -2,7 +2,7 @@ NAME = ./bin/geometry
 CFLAGS = -Wall -Werror
 DIR_SRC_LIB = ./src/libgeometry/
 DIR_SRC = ./src/
-DIR_OBJ = ./obj/
+DIR_OBJ = ./obj/src/
 
 OBJ = $(DIR_OBJ)main.o $(DIR_OBJ)shape_info.o $(DIR_OBJ)syntax.o
 
