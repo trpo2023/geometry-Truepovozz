@@ -32,51 +32,51 @@ CTEST(syntax, syntax_chek)
     ASSERT_EQUAL(expected, result5);
 }
 
-// CTEST(shape_info, petimetr)
-// {
-//     circle c1;
-//     c1.center_x = 1.0;
-//     c1.center_y = 1.0;
-//     c1.radius = 2.0;
+CTEST(shape_info, petimetr)
+{
+    circle c1;
+    c1.center_x = 1.0;
+    c1.center_y = 1.0;
+    c1.radius = 2.0;
 
-//     circle c2;
-//     c2.center_x = 1.0;
-//     c2.center_y = 7.0;
-//     c2.radius = 3.0;
+    circle c2;
+    c2.center_x = 1.0;
+    c2.center_y = 7.0;
+    c2.radius = 3.0;
 
-//     circle c3;
-//     c3.center_x = 5.0;
-//     c3.center_y = 3.0;
-//     c3.radius = 16.0;
+    circle c3;
+    c3.center_x = 5.0;
+    c3.center_y = 3.0;
+    c3.radius = 16.0;
 
-//     circle c4;
-//     c4.center_x = 8.0;
-//     c4.center_y = 2.0;
-//     c4.radius = 4.0;
+    circle c4;
+    c4.center_x = 8.0;
+    c4.center_y = 2.0;
+    c4.radius = 4.0;
 
-//     circle c5;
-//     c5.center_x = 6.0;
-//     c5.center_y = 15.0;
-//     c5.radius = 9.0;
+    circle c5;
+    c5.center_x = 6.0;
+    c5.center_y = 15.0;
+    c5.radius = 9.0;
 
-//     circle* pc1 = &c1;
-//     circle* pc2 = &c2;
-//     circle* pc3 = &c3;
-//     circle* pc4 = &c4;
-//     circle* pc5 = &c5;
+    circle* pc1 = &c1;
+    circle* pc2 = &c2;
+    circle* pc3 = &c3;
+    circle* pc4 = &c4;
+    circle* pc5 = &c5;
 
-//     double result1 = 2 * M_PI * pc1->radius;
-//     double result2 = 2 * M_PI * pc2->radius;
-//     double result3 = 2 * M_PI * pc3->radius;
-//     double result4 = 2 * M_PI * pc4->radius;
-//     double result5 = 2 * M_PI * pc5->radius;
+    double result1 = 2 * M_PI * pc1->radius;
+    double result2 = 2 * M_PI * pc2->radius;
+    double result3 = 2 * M_PI * pc3->radius;
+    double result4 = 2 * M_PI * pc4->radius;
+    double result5 = 2 * M_PI * pc5->radius;
 
-//     ASSERT_DBL_NEAR(result1, get_perimeter(pc1));
-//     ASSERT_DBL_NEAR(result2, get_perimeter(pc2));
-//     ASSERT_DBL_NEAR(result3, get_perimeter(pc3));
-//     ASSERT_DBL_NEAR(result4, get_perimeter(pc4));
-//     ASSERT_DBL_NEAR(result5, get_perimeter(pc5));
-// }
+    ASSERT_DBL_NEAR(result1, get_perimeter(pc1));
+    ASSERT_DBL_NEAR(result2, get_perimeter(pc2));
+    ASSERT_DBL_NEAR(result3, get_perimeter(pc3));
+    ASSERT_DBL_NEAR(result4, get_perimeter(pc4));
+    ASSERT_DBL_NEAR(result5, get_perimeter(pc5));
+}
 
 // CTEST(shape_info, area)
 // {
