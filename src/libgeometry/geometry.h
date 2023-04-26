@@ -1,7 +1,7 @@
 #pragma once
 
 typedef struct {
-    float center_x;
-    float center_y;
-    float radius;
+    double center_x;
+    double center_y;
+    double radius;
 } circle;

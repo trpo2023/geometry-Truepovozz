@@ -1,8 +1,5 @@
-geometry.o
-main.o
-shape_info.o
-syntax.o
-main.d
-shape_info.d
-syntax.d
-libgeometry.a
+*.o
+*.a
+*.d
+/bin/geometry
+/bin/geometry-test

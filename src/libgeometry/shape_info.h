@@ -1,6 +1,7 @@
 #pragma once
 
-#include <libgeometry/geometry.h>
+#include <src/libgeometry/geometry.h>
 
-float get_perimeter(circle*);
-float get_area(circle*);
+double get_perimeter(circle*);
+double get_area(circle*);
+int intersection(circle*, circle*);
