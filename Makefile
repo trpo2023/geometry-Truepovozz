@@ -15,7 +15,7 @@ OBJ = $(DIR_OBJ)main.o $(DIR_OBJ)shape_info.o $(DIR_OBJ)syntax.o
 
 all : $(NAME)
 $(NAME) : $(DIR_OBJ)main.o $(DIR_OBJ)libgeometry.a
-	gcc $(CFLAGS) -o $@ $^
+	gcc $(CFLAGS) -o $@ $^ -lm
 
 $(DIR_OBJ)main.o : $(DIR_SRC)main.c
 	gcc $(CFLAGS) -I ./ -MMD -c $< -o $@
@@ -27,7 +27,7 @@ $(DIR_OBJ)syntax.o : $(DIR_SRC_LIB)syntax.c
 	gcc $(CFLAGS) -I ./ -MMD -c $< -o $@	
 
 $(DIR_OBJ)libgeometry.a : $(DIR_OBJ)syntax.o $(DIR_OBJ)shape_info.o
-	ar rcs $@ $^
+	ar rcs $@ $^ -lm
 
 -include $(DIR_OBJ)main.d $(DIR_OBJ)shape_info.d $(DIR_OBJ)syntax.d
 run:
