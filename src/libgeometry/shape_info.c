@@ -1,13 +1,13 @@
 #include <math.h>
 
-#include <libgeometry/shape_info.h>
+#include <src/libgeometry/shape_info.h>
 
-float get_perimeter(circle* shape)
+double get_perimeter(circle* shape)
 {
     return 2 * M_PI * shape->radius;
 }
 
-float get_area(circle* shape)
+double get_area(circle* shape)
 {
     return (shape->radius * shape->radius) * M_PI;
 }

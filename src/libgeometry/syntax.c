@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include <libgeometry/syntax.h>
+#include <src/libgeometry/syntax.h>
 
 int syntax_check(char* shape, const size_t size_of_str)
 {
@@ -90,42 +90,41 @@ int syntax_check(char* shape, const size_t size_of_str)
 void error_output(char* shape, char* place_of_misstake, int error)
 {
     printf("%s\n", shape);
-    switch(error)
-    {
-        case(0):
-            printf("%s\n", place_of_misstake);
-            printf("Wrong shape name!\n");
-            break;
-        case(1):
-            printf("%s\n", place_of_misstake);
-            printf("Problem in firtst brecket!\n");
-            break;
-        case(2):
-            printf("%s\n", place_of_misstake);
-            printf("In points we use float nums! Or you missed a space between "
-                   "coortinates\n");
-            break;
-        case(3):
-            printf("%s\n", place_of_misstake);
-            printf("In points we use float nums! Or you missed a comma between "
-                   "point and radius\n");
-            break;
-        case(4):
-            printf("%s\n", place_of_misstake);
-            printf("Write space between comma and radius!\n");
-            break;
-        case(5):
-            printf("%s\n", place_of_misstake);
-            printf("In radius we use float nums! Or you missed the second "
-                   "brecket\n");
-            break;
-        case(6):
-            printf("%s\n", place_of_misstake);
-            printf("Problem in second brecket!\n");
-            break;
-        case(7):
-            printf("%s\n", place_of_misstake);
-            printf("Delite unexpected extras!\n");
-            break;
+    switch (error) {
+    case (0):
+        printf("%s\n", place_of_misstake);
+        printf("Wrong shape name!\n");
+        break;
+    case (1):
+        printf("%s\n", place_of_misstake);
+        printf("Problem in firtst brecket!\n");
+        break;
+    case (2):
+        printf("%s\n", place_of_misstake);
+        printf("In points we use float nums! Or you missed a space between "
+               "coortinates\n");
+        break;
+    case (3):
+        printf("%s\n", place_of_misstake);
+        printf("In points we use float nums! Or you missed a comma between "
+               "point and radius\n");
+        break;
+    case (4):
+        printf("%s\n", place_of_misstake);
+        printf("Write space between comma and radius!\n");
+        break;
+    case (5):
+        printf("%s\n", place_of_misstake);
+        printf("In radius we use float nums! Or you missed the second "
+               "brecket\n");
+        break;
+    case (6):
+        printf("%s\n", place_of_misstake);
+        printf("Problem in second brecket!\n");
+        break;
+    case (7):
+        printf("%s\n", place_of_misstake);
+        printf("Delite unexpected extras!\n");
+        break;
     }
 }

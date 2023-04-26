@@ -1,2 +1,5 @@
-circe(0.5 248.7, 2.4)
-circle(0.4 34, 7)
+circle(1 1, 2)
+circle(1 7, 3)
+circle(5 3, 16)
+circle(8 2, 4)
+circle(6 15, 9)

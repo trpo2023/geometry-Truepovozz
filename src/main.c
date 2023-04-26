@@ -2,11 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <libgeometry/geometry.h>
-#include <libgeometry/shape_info.h>
-#include <libgeometry/syntax.h>
+#include <src/libgeometry/geometry.h>
+#include <src/libgeometry/shape_info.h>
+#include <src/libgeometry/syntax.h>
 
-#define QUANTITY_OF_SHAPES 2
+#define QUANTITY_OF_SHAPES 5
 
 int main(int argc, char* argv[])
 {
@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
 
         if (syntax_check(shape_str, size_of_shape_str)) {
             sscanf(shape_str,
-                   "circle(%f %f, %f)",
+                   "circle(%lf %lf, %lf)",
                    &shapes[i]->center_x,
                    &shapes[i]->center_y,
                    &shapes[i]->radius);
@@ -37,11 +37,11 @@ int main(int argc, char* argv[])
     }
 
     for (int i = 0; i < QUANTITY_OF_SHAPES; i++) {
-        printf("circle(%f %f, %f)\n",
+        printf("circle(%lf %lf, %lf)\n",
                shapes[i]->center_x,
                shapes[i]->center_y,
                shapes[i]->radius);
-        printf("perimeter = %f\n", get_perimeter(shapes[i]));
-        printf("area = %f\n", get_area(shapes[i]));
+        printf("perimeter = %lf\n", get_perimeter(shapes[i]));
+        printf("area = %lf\n", get_area(shapes[i]));
     }
 }
