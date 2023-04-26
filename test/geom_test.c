@@ -12,7 +12,7 @@ CTEST(syntax, syntax_chek)
     char* str2 = "circle(4 3, 345)";
     char* str3 = "circle(7 7, 456)";
     char* str4 = "circle(5 8, 776)";
-    char* str5 = "circle(1 1, 1)";
+    char* str5 = "circle(1 1, 2)";
 
     size_t size1 = 16;
     size_t size2 = 14;
