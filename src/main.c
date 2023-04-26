@@ -44,8 +44,8 @@ int main(int argc, char* argv[])
         printf("perimeter = %lf\n", get_perimeter(shapes[i]));
         printf("area = %lf\n", get_area(shapes[i]));
         printf("%d circle intersect: ", i + 1);
-        for(int j = 0; j < QUANTITY_OF_SHAPES; j++){
-            if(i != j && intersection(shapes[i], shapes[j])){
+        for (int j = 0; j < QUANTITY_OF_SHAPES; j++) {
+            if (i != j && intersection(shapes[i], shapes[j])) {
                 printf("%d ", j + 1);
             }
         }

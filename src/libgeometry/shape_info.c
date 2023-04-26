@@ -16,10 +16,12 @@ int intersection(circle* a, circle* b)
 {
     double distance;
 
-    distance = sqrt((pow((a->center_x - b->center_x), 2)) + (pow((a->center_y - b->center_y), 2)));
+    distance
+            = sqrt((pow((a->center_x - b->center_x), 2))
+                   + (pow((a->center_y - b->center_y), 2)));
 
-    if(distance > a->radius && distance > b->radius)
+    if (distance > a->radius && distance > b->radius)
         return 0;
-    
+
     return 1;
 }
