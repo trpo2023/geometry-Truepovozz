@@ -27,7 +27,7 @@ $(DIR_OBJ)syntax.o : $(DIR_SRC_LIB)syntax.c
 	gcc $(CFLAGS) -I ./ -MMD -c $< -o $@	
 
 $(DIR_OBJ)libgeometry.a : $(DIR_OBJ)syntax.o $(DIR_OBJ)shape_info.o
-	ar rcs $@ $^ -lm
+	ar rcs $@ $^ 
 
 -include $(DIR_OBJ)main.d $(DIR_OBJ)shape_info.d $(DIR_OBJ)syntax.d
 run:
