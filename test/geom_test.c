@@ -123,3 +123,46 @@ CTEST(shape_info, area)
     ASSERT_DBL_NEAR(result4, get_area(pc4));
     ASSERT_DBL_NEAR(result5, get_area(pc5));
 }
+
+CTEST(shape_info, intersection)
+{
+    circle c1;
+    c1.center_x = 1.0;
+    c1.center_y = 1.0;
+    c1.radius = 2.0;
+
+    circle c2;
+    c2.center_x = 1.0;
+    c2.center_y = 7.0;
+    c2.radius = 3.0;
+
+    circle c3;
+    c3.center_x = 5.0;
+    c3.center_y = 3.0;
+    c3.radius = 16.0;
+
+    circle c4;
+    c4.center_x = 8.0;
+    c4.center_y = 2.0;
+    c4.radius = 4.0;
+
+    circle c5;
+    c5.center_x = 6.0;
+    c5.center_y = 15.0;
+    c5.radius = 9.0;
+
+    int res1 = intersection(&c1, &c2);
+    int res2 = intersection(&c3, &c2);
+    int res3 = intersection(&c4, &c3);
+    int res4 = intersection(&c4, &c5);
+    int res5 = intersection(&c5, &c3);
+
+    int expected_true = 1;
+    int expected_false = 0;
+
+    ASSERT_EQUAL(expected_false, res1);
+    ASSERT_EQUAL(expected_true, res2);
+    ASSERT_EQUAL(expected_true, res3);
+    ASSERT_EQUAL(expected_false, res4);
+    ASSERT_EQUAL(expected_true, res5);
+}
