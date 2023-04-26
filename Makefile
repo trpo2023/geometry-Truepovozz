@@ -43,7 +43,7 @@ $(DIR_OBJ-TEST)main.o : $(DIR_SRC-TEST)main.c
 $(DIR_OBJ-TEST)geom_test.o : $(DIR_SRC-TEST)geom_test.c
 	gcc $(CFLAGS) -I ./ -c $< -o $@
 
-testrun : 
+testrun : $(NAME-TEST)
 	$(NAME-TEST)
 
 clean:
