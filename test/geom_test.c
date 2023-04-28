@@ -9,10 +9,10 @@
 CTEST(syntax, syntax_chek)
 {
     char* str1 = "circle(4 2, 234)";
-    char* str2 = "circle(4 3, 345)";
-    char* str3 = "circle(7 7, 456)";
-    char* str4 = "circle(5 8, 776)";
-    char* str5 = "circle(1 1, 2)";
+    char* str2 = "circle 4 3, 345";
+    char* str3 = "circle(7 7 456)";
+    char* str4 = "circle(58, 776)";
+    char* str5 = "circe(1 1, 2)";
 
     size_t size1 = 16;
     size_t size2 = 14;
@@ -24,12 +24,13 @@ CTEST(syntax, syntax_chek)
     int result5 = syntax_check(str5, size2);
 
     int expected = 1;
+    int wrong_exp = 0;
 
     ASSERT_EQUAL(expected, result1);
-    ASSERT_EQUAL(expected, result2);
-    ASSERT_EQUAL(expected, result3);
-    ASSERT_EQUAL(expected, result4);
-    ASSERT_EQUAL(expected, result5);
+    ASSERT_EQUAL(wrong_exp, result2);
+    ASSERT_EQUAL(wrong_exp, result3);
+    ASSERT_EQUAL(wrong_exp, result4);
+    ASSERT_EQUAL(wrong_exp, result5);
 }
 
 CTEST(shape_info, petimetr)

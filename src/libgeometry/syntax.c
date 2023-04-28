@@ -43,13 +43,19 @@ int syntax_check(char* shape, const size_t size_of_str)
 
     counter++;
 
-    for (int i = counter; shape[i] != ','; i++) {
+    for (int i = counter; ((shape[i] >= '1') && (shape[i] <= '9')) || (shape[i] == '.'); i++) {
         if ((shape[i] <= '1') && (shape[i] >= '9') && (shape[i] != '.')) {
             misstake_pointer[counter] = '^';
-            error_output(shape, misstake_pointer, 3);
+            error_output(shape, misstake_pointer, 2);
             return 0;
         }
         counter++;
+    }
+
+    if (shape[counter] != ',') {
+        misstake_pointer[counter] = '^';
+        error_output(shape, misstake_pointer, 3);
+        return 0;
     }
 
     counter++;

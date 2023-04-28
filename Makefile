@@ -34,8 +34,8 @@ run:
 	$(NAME) ./bin/shapes
 
 test : $(NAME-TEST)
-$(NAME-TEST) : $(DIR_OBJ-TEST)main.o $(DIR_OBJ-TEST)geom_test.o
-	gcc $(CFLAGS) -o $@ $^ ./obj/src/libgeometry.a -lm
+$(NAME-TEST) : $(DIR_OBJ-TEST)main.o $(DIR_OBJ-TEST)geom_test.o $(DIR_OBJ)libgeometry.a
+	gcc $(CFLAGS) -o $@ $^ -lm
 
 $(DIR_OBJ-TEST)main.o : $(DIR_SRC-TEST)main.c
 	gcc $(CFLAGS) -I ./ -c $< -o $@

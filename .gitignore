@@ -1,5 +1,5 @@
 *.o
 *.a
 *.d
-/bin/geometry
-/bin/geometry-test
+bin/geometry
+bin/geometry-test
